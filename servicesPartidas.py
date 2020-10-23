@@ -30,7 +30,7 @@ class ServicesPartidas():
         while partida._intentos > 0:
             if letra in partida._palabra:  #Verifica si la letra esta en la palabra
                 for i in partida._palabra:  #Busca el indice de la letra y la coloca en palabra_aciertos
-                    if letra == i:              
+                    if letra == i:
                         ind = partida._palabra.index(letra)
                         partida.palabra_aciertos[ind] = letra
                 partida._intentos -= 1
