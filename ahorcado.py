@@ -10,14 +10,19 @@ class Ahorcado():
         while True:
             letra = input(str("Ingrese la letra a intentar: "))
             if letra == 'salir':
+                print("Saliendo del juego...")
                 break
             resultado = ServicesPartidas().intentar_letra(partida, letra)
             if resultado == 'Gano':
-                print("Has Ganado!")
+                print("Has ganado!")
+                print("La palabra era: ", partida._palabra)
                 break
             if resultado == 'Perdio':
-                print("Has Perdido")
+                print("Has perdido")
+                print("La palabra era: ", partida._palabra)
                 break
+            print(partida._palabra_aciertos)
+            print("Continua")
         return True
 
     def dos_jugadores(self):
@@ -30,6 +35,9 @@ class Ahorcado():
         partida = ServicesPartidas().iniciar_partida(nombre1, dificultad1,
                                                      palabra_adivinar1,
                                                      tipo_palabra_adivinar1)
+        print("=====================================")
+        print("Tipo de palabra: ", partida._tipo_palabra)
+        print("=====================================")
         while True:
             letra = input(str("Jugador 1, ingrese la letra a intentar: "))
             if letra == 'salir':
@@ -48,6 +56,9 @@ class Ahorcado():
         partida = ServicesPartidas().iniciar_partida(nombre2, dificultad2,
                                                      palabra_adivinar2,
                                                      tipo_palabra_adivinar2)
+        print("=====================================")
+        print("Tipo de palabra: ", partida._tipo_palabra)
+        print("=====================================")
         while True:
             letra = input(str("Jugador 2, ingrese la letra a intentar: "))
             letra.upper()
@@ -65,6 +76,7 @@ class Ahorcado():
         hist['JUGADOR 2'] = {'NOMBRE': nombre2, 'PALABRA':
                              palabra_adivinar2.upper(),
                              'RESULTADO': resultado2}
+        print("Historial de la partida:")
         for i in hist:
             print(hist[i])
         return True
