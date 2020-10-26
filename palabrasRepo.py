@@ -1,7 +1,6 @@
 class Repository:
 
-    repo_ran = {0: ['FRUTA', list('MANZANA')],
-                1: ['ELECTRÓNICA', list('CELULAR')],
-                2: ['VEHICULO', list('AUTO')],
-                3: ['ANIMAL', list('PERRO')],
-                4: ['DEPORTE', list('FÚTBOL')]}
+    repo_ran = {0: ['tipo_palabra', 'palabra'],
+                1: ['tipo_palabra', 'palabra1'],
+                2: ['tipo_palabra', 'palabra2'],
+                3: ['tipo_palabra', 'palabra3']}

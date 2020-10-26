@@ -25,14 +25,14 @@ class ServicesPartidas():
         return partida
 
     def intentar_letra(self, partida, letra):
+        letra = letra.upper()
         if partida._intentos == 0:
             raise ValueError
         while partida._intentos > 0:
             if letra in partida._palabra:  #Verifica si la letra esta en la palabra
-                for i in partida._palabra:  #Busca el indice de la letra y la coloca en palabra_aciertos
-                    if letra == i:
-                        ind = partida._palabra.index(letra)
-                        partida.palabra_aciertos[ind] = letra
+                for i in range(0, len(partida._palabra)):  #Busca el indice de la letra y la coloca en palabra_aciertos
+                    if letra == partida._palabra[i]:
+                        partida.palabra_aciertos[i] = letra
                 partida._intentos -= 1
             if letra not in partida._palabra:
                 partida._intentos -= 1
