@@ -2,5 +2,5 @@
 source = .
 
 omit = 
-    /virualenv/
-    /menu.py
+    */virualenv/*
+    */menu.py
